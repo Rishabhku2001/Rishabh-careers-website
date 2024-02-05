@@ -2,7 +2,7 @@ import os
 import getpass
 
 os.environ[
-    'OPENAI_API_KEY'] = "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"
+    'OPENAI_API_KEY'] = "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"
 
 from langchain_openai import ChatOpenAI
 
