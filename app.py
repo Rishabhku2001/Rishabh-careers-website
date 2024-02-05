@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify
+from llm import resp
 
 app = Flask(__name__)
 
@@ -26,12 +27,28 @@ JOBS = [{
 
 @app.route("/")
 def hello_world():
+  # print(resp("who you are?"))
   return render_template('home.html', jobs=JOBS, company_name='Rishabh')
 
 
 @app.route("/api/jobs")
 def list_jobs():
   return jsonify(JOBS)
+
+
+@app.route('/api/data', methods=['POST'])
+def receive_data():
+  print("hellow")
+  data = request.json  # Assuming the data is sent in JSON format
+  # Process the data in Python
+  # ...
+
+  # Respond with data (optional)
+  response_data = {'result': 'Data received successfully'}
+  print(data)
+  # data = data + "kumar"
+  data = resp(data)
+  return jsonify(data)
 
 
 if __name__ == "__main__":
