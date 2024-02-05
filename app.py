@@ -1,7 +1,9 @@
 from flask import Flask, render_template, jsonify
 from llm import resp
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 JOBS = [{
     'id': 1,
