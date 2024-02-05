@@ -1,2 +1,10 @@
 Flask
 gunicorn
+gptcache==0.1.43
+langchain_experimental==0.0.50
+langchainhub==0.1.14
+langkit==0.0.29
+qdrant_client==1.7.2
+langchain
+langchain_openai
+faiss-cpu
