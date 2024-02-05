@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from llm import resp
 from flask_cors import CORS
 
@@ -50,6 +50,7 @@ def receive_data():
   print(data)
   # data = data + "kumar"
   data = resp(data)
+  print(data)
   return jsonify(data)
 
 
