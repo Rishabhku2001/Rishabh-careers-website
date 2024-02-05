@@ -25,9 +25,6 @@ model = RetrievalQAWithSourcesChain.from_chain_type(llm=ChatOpenAI(),
                                                     chain_type="stuff",
                                                     retriever=retriever)
 
-response = model({"question": "how are you?"}, return_only_outputs=True)
-print(response['answer'])
-
 
 def resp(question):
   response = model({"question": question}, return_only_outputs=True)
